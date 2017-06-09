@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Faculty Register Page</title>
+</head>
+<body>
+<div class="page-header">
+	<h1>Faculty Registration</h1>
+</div>
+	<form ng-submit="registerFaculty.regUser();">
+		Username: <input type="text" placeholder="username" class="form-control" ng-model="registerFaculty.regData.username"></input><br>
+		Password: <input type="password" placeholder="password" class="form-control" ng-model="registerFaculty.regData.password"></input ><br>
+		<button class="btn btn-primary">Register</button>
+	</form><br>
+
+<div class="row show-hide-message">
+	<div class="alert alert-danger">
+		{{registerFaculty.errorMessage}}
+	</div>
+</div>
+
+<div class="row show-hide-message">
+	<div class="alert alert-success">
+		{{registerFaculty.successMessage}}
+	</div>
+</div>
+</body>
+</html>
