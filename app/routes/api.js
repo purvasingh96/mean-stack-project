@@ -6,16 +6,16 @@ module.exports  = function(router){
 		user.password = req.body.password;
 		if(req.body.username== " "||req.body.password==" "){
 
-				res.json({'success': false, 'message':'faculty exists'});
+				res.json({success: false, message:'faculty empty'});
 		}
 		else{
 				user.save(function(err){
 				if(err){
-					res.json({'success': false, 'message':'faculty exists'});
+					res.json({success: false, message:'faculty exists'});
 				}
 				else{
 					//res.send("faculty created");
-					res.json({'success': false, 'message':'faculty created'});
+					res.json({success: true, message:'faculty created'});
 				}
 			});
 		}
