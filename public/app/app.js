@@ -1,2 +1,2 @@
-var userApp = angular.module('userApp', ['appRoute', 'userControllers']);
+var userApp = angular.module('userApp', ['appRoute', 'userControllers', 'userServices']);
 
