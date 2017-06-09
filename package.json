@@ -12,5 +12,11 @@
     "stack"
   ],
   "author": "purva singh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.5",
+    "morgan": "^1.8.2"
+  }
 }
