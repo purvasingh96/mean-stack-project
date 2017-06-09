@@ -11,15 +11,23 @@
 		Username: <input type="text" placeholder="username" class="form-control" ng-model="registerFaculty.regData.username"></input><br>
 		Password: <input type="password" placeholder="password" class="form-control" ng-model="registerFaculty.regData.password"></input ><br>
 		<button class="btn btn-primary">Register</button>
-	</form><br>
+	</form><br><br>
 
-<div class="row show-hide-message">
+<!-- Whenever loading is true show it-->
+<div class="jumbotron text-center" ng-show="registerFaculty.loading">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Please Wait...</p>
+</div>
+
+<!-- Whenever there is error show it-->
+<div class="row show-hide-message" ng-show="registerFaculty.errorMessage">
 	<div class="alert alert-danger">
 		{{registerFaculty.errorMessage}}
 	</div>
 </div>
 
-<div class="row show-hide-message">
+<!-- Whenever success is true show it-->
+<div class="row show-hide-message" ng-show="registerFaculty.successMessage">
 	<div class="alert alert-success">
 		{{registerFaculty.successMessage}}
 	</div>
