@@ -1,23 +1,26 @@
-angular.module('userControllers', [])
+angular.module('userControllers', ['userServices'])
 
-.controller('regCtrl', function($http){
+.controller('regCtrl', function($http, $location, $timeout, User){
 
 	var app=this;
 
 	app.regUser = function(regData){
-		console.log("testing new button");
+		app.loading = true;
+		app.errorMessage= false;
 		console.log(app.regData);
-		$http.post('/api/faculty', app.regData).then(function(data){
-			console.log(data);
-		});	//faculty registered in faculty_details
-		/*if(data.regData.success){
-			//create success message
-			//redirect to home page
-			app.successMessage = data.regData.message;
-		}
-		else{
-			//create error message
-			app.errorMessage = data.regData.message;
-		}*/
+		User.create(app.regData).then(function(data){
+			if(data.data.success){
+				app.loading=false;
+				app.successMessage = data.data.message;
+				$timeout(function() {
+					$location.path('/');
+				}, 1500);
+				
+			}
+			else{
+				app.loading=false;
+				app.errorMessage = data.data.message;
+			}
+		});	
 	};
 });
