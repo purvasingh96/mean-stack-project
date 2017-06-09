@@ -9,4 +9,6 @@ This will start mongodb and keep this cmd running in background and start your _
 **Solution:** This is because you made a route in _route.js_ file to a page that you probably didnt even create. For example if you have written `.when('/register',{templateurl: 'faculty_register.html'});` and have not created faculty_register.html page yet then you are likely to get stack size exceeded error and _page will become unresponsive_.  
 
 # 3. **res.json() not working properly:**  
-**Solution:** Make sure to install express, mongoose, morgan and body-parser by running the command `npm install express, mongoose, morgan, body-parser --save` in cmd. 
+**Solution:** Make sure to install express, mongoose, morgan and body-parser by running the command `npm install express, mongoose, morgan, body-parser --save` in cmd.  
+# _Reference:_  
+https://www.youtube.com/watch?v=-gd73iczlS8&list=PL3vQyqzqjZ637sWpKvniMCxdqZhnMJC1d video tutorials by David Acosta.
