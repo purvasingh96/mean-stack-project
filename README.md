@@ -17,4 +17,5 @@ This will start mongodb and keep this cmd running in background and start your _
 ## 5. **Always showing _Cannot authenticate user_ even though you entered correct username password:**  
 **Solution:** Check whether you added `controller: 'mainCtrl'` in your _routes.js_ file under `.when('/faculty_login')`
 ## _Reference:_  
-https://www.youtube.com/watch?v=-gd73iczlS8&list=PL3vQyqzqjZ637sWpKvniMCxdqZhnMJC1d video tutorials by David Acosta.
+https://www.youtube.com/watch?v=-gd73iczlS8&list=PL3vQyqzqjZ637sWpKvniMCxdqZhnMJC1d video tutorials by David Acosta.  
+https://github.com/auth0/node-jsonwebtoken
