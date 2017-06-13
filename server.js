@@ -1,12 +1,12 @@
 var express 	= 	require('express');
-var app 		= 	express();
-var morgan 		= 	require('morgan');
+var app 	= 	express();
+var morgan 	= 	require('morgan');
 var mongoose 	= 	require('mongoose');
 var bodyParser 	= 	require('body-parser');
-var router 		= 	express.Router();
+var router	= 	express.Router();
 var appRoutes 	= 	require('./app/routes/api')(router);
-var path		=	require('path');
-
+var path	=	require('path');
+mongoose.Promise = global.Promise;﻿
 //middlewares
 app.use(morgan('dev'));
 app.use(bodyParser.json()); // for parsing application/json
