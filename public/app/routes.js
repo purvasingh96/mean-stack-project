@@ -6,13 +6,16 @@ var appRoute = angular.module('appRoute', ['ngRoute'])
 
   // Home Route    
   .when('/', {
-    templateUrl: 'app/views/pages/faculty_login.html',
+    templateUrl: 'app/views/users/register.html'
 
+  })
+  .when('/logout', {
+    templateUrl: 'app/views/users/logout.html'
   })
   
     // Login Route            
   .when('/faculty_login', {
-    templateUrl: 'app/views/pages/faculty_login.html'
+    templateUrl: 'app/views/users/faculty_login.html'
   })
 
   //check_load route
