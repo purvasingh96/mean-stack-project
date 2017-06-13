@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Faculty Login Page</title>
+</head>
+<body>
+<div class="page-header">
+	<h1>Faculty Login</h1>
+</div>
+	<form ng-submit="main.doLogin(loginData);">
+		Username: <input type="text" placeholder="username" class="form-control" ng-model="main.LoginData.username"></input><br>
+		Password: <input type="password" placeholder="password" class="form-control" ng-model="main.LoginData.password"></input ><br>
+		<button class="btn btn-primary">Login</button>
+	</form><br><br>
+
+<!-- Whenever loading is true show it-->
+<div class="jumbotron text-center" ng-show="main.loading">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Please Wait...</p>
+</div>
+
+<!-- Whenever there is error show it-->
+<div class="row show-hide-message" ng-show="main.errorMessage">
+	<div class="alert alert-danger">
+		{{main.errorMessage}}
+	</div>
+</div>
+
+<!-- Whenever success is true show it-->
+<div class="row show-hide-message" ng-show="main.successMessage">
+	<div class="alert alert-success">
+		{{main.successMessage}}
+	</div>
+</div>
+</body>
+</html>
