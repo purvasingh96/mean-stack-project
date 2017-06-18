@@ -1,12 +1,13 @@
-angular.module('csvController', [])
+var app = angular.module('app', [])
 
-.controller('csvCtrl', function myCtrl($scope, $http) {
+app.controller('csvCtrl', function myCtrl($scope, $http) {
 	$scope.readCSV = function() {
 		// http get request to read CSV file content
-		$http.get('students.csv').then(function($scope)
+		$http.get('students.csv').then(function(response)
 			{
 				console.log("got csv");
-				$scope.processData
+				console.log(response);
+				$scope.processData();
 			});
 	};
 	$scope.processData = function(allText) {

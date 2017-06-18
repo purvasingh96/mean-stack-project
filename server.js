@@ -24,8 +24,9 @@ mongoose.connect('mongodb://localhost/faculty_details', function(err){
 });
 
 app.get('*', function(req, res){
-	res.sendFile(path.join(__dirname+ '/public/app/views/index.html'));
+	res.sendFile(path.join(__dirname+ '/public/app/views/pages/check_load.html'));
 })
+
 
 app.listen(8080, function(){
 	console.log("running the server");
