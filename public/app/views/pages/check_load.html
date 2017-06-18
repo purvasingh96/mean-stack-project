@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
+<html ng-controller="csvCtrl">
+
 <body>
-<h1>check load page</h1>
+<button ng-click="readCSV()">
+Display CSV as Data Table
+</button>
+<div id="divID">
+  <table>
+    <tr ng-repeat="x in data">
+      <td ng-repeat="y in x">{{ y }}</td>
+    </tr>
+  </table>
+</div>
+<div>
+<table>
+</table>
+</div>
 </body>
 </html>
