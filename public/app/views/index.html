@@ -13,15 +13,18 @@
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Main Angular Files -->
-    <script src="../assets/js/angular.js"></script>
+    <script src="../assets/js/angular.min.js"></script>
     <script src="../assets/js/angular-route.js"></script>
     <script src="../assets/js/angular-animate.js"></script>
 
     <!-- Controller files -->
     <script src="./app/controllers/userCtrl.js"></script>
+    <script src="./app/controllers/mainCtrl.js"></script>
+    <script src="./app/controllers/csvCtrl.js"></script>
 
     <!-- Services files -->
     <script src="./app/services/userServices.js"></script>
+    <script src="./app/services/authServices.js"></script>
     
     <!-- Angular Config/Routes -->
     <script src="./app/app.js"></script>
@@ -30,12 +33,19 @@
     <title>Faculty Login Page</title>
   </head>
 
-  <body ng-app="userApp">
+  <body ng-app="userApp" ng-controller="mainCtrl as main">
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar">
+      
+      </ul>
+    </div>
     <nav>
       <a href="/">Home</a>
-      <a href="/register">register</a>
-      <a href="/faculty_login">faculty login</a>
-      <a href="/check_load">check load</a>
+      <a href="/register" ng-show="!main.isLoggedIn">register</a>
+      <a href="/faculty_login" ng-show="!main.isLoggedIn">faculty login</a>
+      <a href="/check_load" ng-show="main.isLoggedIn">check load</a>
+      <a href="#" ng-click="main.logout();">logout</a>
+      <a href="#" ng-show="main.isLoggedIn" >{{main.username}}</a>
     </nav>
   	<div class="container">
       <div ng-view></div>
