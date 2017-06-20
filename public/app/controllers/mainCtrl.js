@@ -47,6 +47,21 @@ angular.module('mainController', ['authServices'])
 		}
 		app.data = lines;
 	};
+
+	app.selected = [];
+	app.exist = function(item){
+		return app.selected.indexOf(item)>-1;
+	}
+
+	app.toggleSelection = function(item){
+		var idx = app.selected.indexOf(item);
+		if(idx > -1){
+			app.selected.splice(idx, 1);
+		}
+		else{
+			app.selected.push(item);
+		}
+	}
 	app.doLogin = function(LoginData){
 		app.loading = true;
 		app.errorMessage= false;
