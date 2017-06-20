@@ -5,16 +5,17 @@
 <button ng-click="readCSV()">
 Display CSV as Data Table
 </button>
+<br>
 <div id="divID">
-  <table>
+  <table border="1px solid black">
     <tr ng-repeat="x in data">
       <td ng-repeat="y in x">{{ y }}</td>
+      <td><input type="checkbox" name="team" id="y.name"></td>
     </tr>
   </table>
 </div>
 <div>
-<table>
-</table>
+
 </div>
 </body>
 </html>
