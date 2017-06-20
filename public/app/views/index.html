@@ -43,8 +43,8 @@
       <a href="/">Home</a>
       <a href="/register" ng-show="!main.isLoggedIn">register</a>
       <a href="/faculty_login" ng-show="!main.isLoggedIn">faculty login</a>
-      <a href="/check_load" ng-show="main.isLoggedIn">check load</a>
-      <a href="/check_load">check load</a>
+      <a href="/check_load" ng-show="main.isLoggedIn" ng-click="main.readSV();">check load</a>
+      
       <a href="#" ng-click="main.logout();">logout</a>
       <a href="#" ng-show="main.isLoggedIn" >{{main.username}}</a>
     </nav>
