@@ -9,6 +9,8 @@ angular.module('csvController', [])
 				$scope.processData(response.data);
 			});
 	};
+
+
 	$scope.processData = function(allText) {
 		// split content based on new line
 		console.log("process data");
@@ -22,10 +24,26 @@ angular.module('csvController', [])
 				var tarr = [];
 				for ( var j = 0; j < headers.length; j++) {
 					tarr.push(data[j]);
+
 				}
 				lines.push(tarr);
 			}
 		}
 		$scope.data = lines;
 	};
+	
+	$scope.selected = [];
+	$scope.exist = function(item){
+		return $scope.selected.indexOf(item)>-1;
+	}
+
+	$scope.toggleSelection = function(item){
+		var idx = $scope.selected.indexOf(item);
+		if(idx > -1){
+			$scope.selected.splice(idx, 1);
+		}
+		else{
+			$scope.selected.push(item);
+		}
+	}
 });
