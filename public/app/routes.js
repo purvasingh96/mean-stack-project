@@ -20,7 +20,9 @@ var appRoute = angular.module('appRoute', ['ngRoute'])
 
   //check_load route
   .when('/check_load', {
-  	templateUrl: 'app/views/pages/check_load.html'
+    templateUrl: 'app/views/pages/check_load.html',
+    controller: 'csvCtrl',
+    
   })
 
   //register route
