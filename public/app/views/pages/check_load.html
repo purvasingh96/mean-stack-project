@@ -7,17 +7,29 @@ Display CSV as Data Table
 </button>
 <br>
 <div id="divID">
-  <table border="1px solid black">
+  <table border="1px solid black" class="table">
+  <th>SNO.</th><th>NAME</th><th>REG.NO</th>
     <tr ng-repeat="x in data">
       <td ng-repeat="y in x">{{ y }}</td>
-      <td><input type="checkbox" name="team" id="y.name"></td>
+      <td><input type="checkbox" ng-model="selected" ng-checked="exist(x)" ng-click="toggleSelection(x)"></td>
     </tr>
   </table>
 </div>
-<div>
 
-</div>
+<h3>Interning Students</h3>
+<!-- <p ng-repeat ="selectedname in selected">
+	{{selectedname}}</p> -->
+<table border="1px solid black" class="table">
+  <th>SNO.</th><th>NAME</th><th>REG.NO</th>
+    <tr ng-repeat="selectedname in selected">
+      <td ng-repeat="z in selectedname">{{ z }}</td>
+    </tr>
+</table>
+<button class="btn btn-primary">Show time table</button>
+<button class="btn btn-primary">Show common free Slots</button>
+
 </body>
 </html>
+<script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/angular.min.js"></script>
 <script src="/app/controllers/csvCtrl.js"></script>
