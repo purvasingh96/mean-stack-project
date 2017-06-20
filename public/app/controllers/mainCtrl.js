@@ -1,6 +1,6 @@
 angular.module('mainController', ['authServices'])
 
-.controller('mainCtrl', function(Auth, $timeout, $location, $rootScope){
+.controller('mainCtrl', function(Auth, $timeout, $location, $rootScope, $http){
 	var app=this;
 
 	app.loadme = false;
@@ -20,6 +20,33 @@ angular.module('mainController', ['authServices'])
 			app.loadme = true;
 		}
 	});
+
+	app.readCSV = function(){
+		$http.get('/assets/students.csv').then(function(response)
+			{
+				console.log("got csv");
+				app.processData(response.data);
+			});
+	};
+	app.processData = function(allText) {
+		// split content based on new line
+		console.log("process data");
+		var allTextLines = allText.split(/\r\n|\n/);
+		var headers = allTextLines[0].split(',');
+		var lines = [];
+		for ( var i = 0; i < allTextLines.length; i++) {
+			// split content based on comma
+			var data = allTextLines[i].split(',');
+			if (data.length == headers.length) {
+				var tarr = [];
+				for ( var j = 0; j < headers.length; j++) {
+					tarr.push(data[j]);
+				}
+				lines.push(tarr);
+			}
+		}
+		app.data = lines;
+	};
 	app.doLogin = function(LoginData){
 		app.loading = true;
 		app.errorMessage= false;
@@ -50,5 +77,3 @@ angular.module('mainController', ['authServices'])
 		}, 1500);
 	}
 });
-
-
