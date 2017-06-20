@@ -31,6 +31,13 @@ app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname+ '/public/app/views/index.html'));
 });
 
+app.get('/faculty_login', function(req, res){
+	res.sendFile(path.join(__dirname+ '/public/app/views/users/faculty_login.html'));
+});
+
+app.get('/register', function(req, res){
+	res.sendFile(path.join(__dirname+ '/public/app/views/users/register.html'));
+});
 
 app.listen(8080, function(){
 	console.log("running the server");
