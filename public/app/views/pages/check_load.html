@@ -5,7 +5,8 @@
 <button ng-click="readCSV()">
 Display CSV as Data Table
 </button>
-<br>
+&nbsp&nbsp
+<button class="btn btn-primary" ng-click="readCSV_2()">Show interning reg no</button><br><br>
 <div id="divID">
   <table border="1px solid black" class="table">
   <th>SNO.</th><th>NAME</th><th>REG.NO</th>
@@ -18,15 +19,54 @@ Display CSV as Data Table
 
 <h3>Interning Students</h3>
 <!-- <p ng-repeat ="selectedname in selected">
-	{{selectedname}}</p> -->
+  {{selectedname}}</p> -->
 <table border="1px solid black" class="table">
   <th>SNO.</th><th>NAME</th><th>REG.NO</th>
     <tr ng-repeat="selectedname in selected">
       <td ng-repeat="z in selectedname">{{ z }}</td>
     </tr>
 </table>
-<button class="btn btn-primary">Show time table</button>
-<button class="btn btn-primary">Show common free Slots</button>
+
+<h3>Interning Students</h3>
+<table border="1px solid black" class="table">
+  <!-- <th>SNO.</th><th>NAME</th><th>REG.NO</th> -->
+    <tr ng-repeat="col_regs in selected">
+      <td ng-repeat="rowregs in col_regs" ng-show="$index==2" >{{ rowregs }}</td>
+    </tr>
+</table>
+
+
+
+<!--make a button that shows tt of selected students only-->
+
+<button class="btn btn-primary" ng-click="show_tt()">Show purva timetable</button>
+<button class="btn btn-primary" ng-click="show_tt_2()">Show kunal timetable</button>
+<button class="btn btn-primary" ng-click="showcommon()">Show common free Slots</button>
+
+<br>
+
+
+<table border="1px solid black" class="table">
+  <!-- <th>SNO.</th><th>NAME</th><th>REG.NO</th> -->
+    <tr ng-repeat="col in data_tt">
+      <td ng-repeat="row in col track by $index" >{{ row }}</td>
+    </tr>
+</table>
+
+<table border="1px solid black" class="table">
+  <!-- <th>SNO.</th><th>NAME</th><th>REG.NO</th> -->
+    <tr ng-repeat="col2 in data_tt2">
+      <td ng-repeat="row2 in col2 track by $index" >{{ row2 }}</td>
+    </tr>
+</table>
+
+<table border="1px solid black" class="table">
+  <!-- <th>SNO.</th><th>NAME</th><th>REG.NO</th> -->
+    <tr ng-repeat="col3 in data_intern">
+      <td ng-repeat="row3 in col3 track by $index" >{{ row3 }}</td>
+    </tr>
+</table>
+<p ng-repeat="p in emptySlots track by $index">{{p}}</p>
 
 </body>
 </html>
