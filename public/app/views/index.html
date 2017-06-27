@@ -17,15 +17,17 @@
     <script src="../assets/js/angular-route.js"></script>
     <script src="../assets/js/angular-animate.js"></script>
 
+
     <!-- Controller files -->
     <script src="./app/controllers/userCtrl.js"></script>
     <script src="./app/controllers/mainCtrl.js"></script>
     <script src="./app/controllers/csvCtrl.js"></script>
+    <script src="./app/controllers/managementCtrl.js"></script>
 
     <!-- Services files -->
     <script src="./app/services/userServices.js"></script>
     <script src="./app/services/authServices.js"></script>
-    
+    <script src="./app/services/studentServices.js"></script>
     <!-- Angular Config/Routes -->
     <script src="./app/app.js"></script>
     <script src="./app/routes.js"></script>
@@ -42,6 +44,7 @@
     <nav>
       <a href="/">Home</a>
       <a href="/register" ng-show="!main.isLoggedIn">register</a>
+      <a href="/management">Management</a>
       <a href="/faculty_login" ng-show="!main.isLoggedIn">faculty login</a>
       <a href="/check_load" ng-show="main.isLoggedIn" ng-click="main.readSV();">check load</a>
       
