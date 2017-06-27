@@ -27,6 +27,11 @@ app.get('/check_load', function(req, res){
 	res.sendFile(path.join(__dirname+ '/public/app/views/pages/check_load.html'));
 });
 
+app.get('/management', function(req, res){
+	res.sendFile(path.join(__dirname+ '/public/app/views/pages/management.html'));
+});
+
+
 app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname+ '/public/app/views/index.html'));
 });
