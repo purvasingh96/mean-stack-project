@@ -1,4 +1,5 @@
 var User 		= 	require('../models/user');
+var Student 	=	require('../models/student')
 var jwt 		= 	require('jsonwebtoken');
 var secret		=	'vit';	//secret is used for verification
 module.exports  = function(router){
@@ -76,6 +77,16 @@ module.exports  = function(router){
 		res.send(req.decoded);	
 	});
 
+	router.get('/management', function(req, res){
+		Student.find({}, function(err, students){
+			if(err){
+				throw err;
+			}
+			else{
+				res.json({success: true, students: students});
+			}
+		})
+	});
 	
 	return router;
 }
