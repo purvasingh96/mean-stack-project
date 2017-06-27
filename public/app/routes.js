@@ -12,7 +12,11 @@ var appRoute = angular.module('appRoute', ['ngRoute'])
   .when('/logout', {
     templateUrl: 'app/views/users/logout.html'
   })
-  
+  .when('/management', {
+    templateUrl: 'app/views/pages/management.html',
+    controller: 'managementCtrl',
+    controllerAs: 'management'
+  })
     // Login Route            
   .when('/faculty_login', {
     templateUrl: 'app/views/users/faculty_login.html'
