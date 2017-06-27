@@ -21,7 +21,7 @@ This will start mongodb and keep this cmd running in background and start your _
 **Solution:** In the headers section of postman type _x-access-token_  
 
 ## 7. **How to import external csv file to mongodb:**  
-**Solution: type: `mongoimport -d <database name> -c <collections name> --type csv --file students.csv `**
+**Solution: type: `mongoimport -d <database name> -c <collections name> --type csv --file students.csv --headerline `**
 ## _Reference:_  
 https://www.youtube.com/watch?v=-gd73iczlS8&list=PL3vQyqzqjZ637sWpKvniMCxdqZhnMJC1d video tutorials by David Acosta.  
 https://github.com/auth0/node-jsonwebtoken
